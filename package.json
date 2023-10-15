@@ -1,0 +1,29 @@
+{
+  "name": "formulariomotorista",
+  "version": "1.0.0",
+  "description": "Formulario completo para cadastro de motoristas",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brwilliam/formularioMotorista.git"
+  },
+  "keywords": [
+    "node",
+    "http"
+  ],
+  "author": "Bruno William",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brwilliam/formularioMotorista/issues"
+  },
+  "homepage": "https://github.com/brwilliam/formularioMotorista#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
+  }
+}
