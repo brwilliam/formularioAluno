@@ -4,7 +4,7 @@ import session from "express-session";
 import rotaLogin from "./rotas/rotaLogin.js";
 
 //ip 0.0.0.0 todas interfaces disponiveis
-const host = '129.146.68.51';
+const host = '0.0.0.0';
 //porta disponivel para meu usuario na tabela
 const porta = '3206'
 
