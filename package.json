@@ -1,7 +1,7 @@
 {
-  "name": "formulariomotorista",
+  "name": "formularioaluno",
   "version": "1.0.0",
-  "description": "Formulario completo para cadastro de motoristas",
+  "description": "Formulario completo para cadastro de aluno",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brwilliam/formularioMotorista.git"
+    "url": "git+https://github.com/brwilliam/formularioAluno.git"
   },
   "keywords": [
     "node",
@@ -19,9 +19,9 @@
   "author": "Bruno William",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brwilliam/formularioMotorista/issues"
+    "url": "https://github.com/brwilliam/formularioAluno/issues"
   },
-  "homepage": "https://github.com/brwilliam/formularioMotorista#readme",
+  "homepage": "https://github.com/brwilliam/formularioAluno#readme",
   "dependencies": {
     "express": "^4.18.2",
     "express-session": "^1.17.3"
