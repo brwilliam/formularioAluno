@@ -11,9 +11,9 @@ rotaLogin
     const senha = requisicao.body.senha;
     if (usuario === 'Renato' && senha ==='123') {
       requisicao.session.usuarioLogado = true;
-      resposta.redirect("./cadastroAluno.html");
+      resposta.redirect("/cadastroAluno.html");
     } else {
-      resposta.redirect("./voltar.html");
+      resposta.redirect("/voltar.html");
     }
   });
 
