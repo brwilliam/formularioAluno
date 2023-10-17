@@ -1,5 +1,5 @@
 import AlunoDAO from "../Persistencia/AlunoDAO.js";
-import Aluno from "../Persistencia/AlunoDAO.js";
+
 
 export default class Aluno{
     //definindo de forma privada os atributos da classe

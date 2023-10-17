@@ -2,9 +2,7 @@ import express from "express";
 import autenticar from "./seguranca/Autenticacao.js";
 import session from "express-session";
 import rotaLogin from "./rotas/rotaLogin.js";
-
-//teste
-import Aluno from '.Backend/Modelo/Aluno.js';
+import Aluno from './Backend/Modelo/Aluno.js';
 
 //ip 0.0.0.0 todas interfaces disponiveis
 const host = '0.0.0.0';
@@ -33,7 +31,7 @@ app.use('/alunos', (requisicao, resposta)=>{
     aluno.consultar('').then((listaAlunos)=>{
         resposta.json(listaAlunos);
     })
-})
+});
 
 app.use('/login', rotaLogin);
 //autencicar para acessar protegido

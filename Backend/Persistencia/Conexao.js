@@ -8,8 +8,8 @@ export default  async function conectar (){
     }
     global.poolConexoes = mysql.createPool({
         host: 'localhost',
-        porta: 3306,
-        batabase:'backendaluno6-ppiadsead',
+        porta:3306,
+        database:'backendaluno6-ppiadsead',
         user:'aluno6-ppiadsead',
         password: 'V1FbagMvDpyE89jGcbFn',
         waitForConnections: true,
