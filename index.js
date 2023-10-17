@@ -7,7 +7,7 @@ import Aluno from './Backend/Modelo/Aluno.js';
 //ip 0.0.0.0 todas interfaces disponiveis
 const host = '0.0.0.0';
 //porta disponivel para meu usuario na tabela
-const porta = '3206'
+const porta='3206';
 
 const app = express();
 
