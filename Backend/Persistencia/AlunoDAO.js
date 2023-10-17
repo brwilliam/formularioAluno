@@ -45,8 +45,9 @@ export default class AlunoDAO{
         if (!termo) termo = "";
     
         const listaAlunos = [];
-        const sql = 'SELECT * FROM aluno WHERE nome LIKE ?';
-        const parametros = [`%${termo}%`]; // consultando por partes
+        const sql = `SELECT * FROM aluno ${termo === "" ? `WHERE nome LIKE' %${termo}%'` : ""}`;
+        const parametros = ['aluno.nome,aluno.cpf,aluno.dataNasc,aluno.genero,\
+                            aluno.endereco,aluno.bairro,aluno.email,aluno.celular,aluno.estadoCivil'];
         const [rows] = await conexao.query(sql, parametros);
     
         listaAlunos = rows.map(linha => new Aluno(
