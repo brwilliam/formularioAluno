@@ -1,3 +1,6 @@
+import AlunoDAO from "../Persistencia/AlunoDAO.js";
+import Aluno from "../Persistencia/AlunoDAO.js";
+
 export default class Aluno{
     //definindo de forma privada os atributos da classe
     #nome
@@ -109,4 +112,25 @@ export default class Aluno{
             estadoCivil: this.#estadoCivil, 
         }
     }
+
+    async gravar(){
+        const aluDAO = new AlunoDAO();
+        await aluDAO.gravar(this);
+    }
+
+    async atualizar(){
+        const aluDAO = new AlunoDAO();
+        await aluDAO.atualizar(this);
+    }
+
+    async exluir(){
+        const aluDAO = new AlunoDAO();
+        await aluDAO.excluir(this);
+    }
+
+    async consultar(termo){
+        const aluDAO = new AlunoDAO();
+        return await aluDAO.consultar(termo);
+    }
 }
+

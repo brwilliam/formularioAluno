@@ -3,6 +3,9 @@ import autenticar from "./seguranca/Autenticacao.js";
 import session from "express-session";
 import rotaLogin from "./rotas/rotaLogin.js";
 
+//teste
+import Aluno from '.Backend/Modelo/Aluno.js';
+
 //ip 0.0.0.0 todas interfaces disponiveis
 const host = '0.0.0.0';
 //porta disponivel para meu usuario na tabela
@@ -23,9 +26,20 @@ app.use(session({
 
 //publicar da pasta publico //conteudo estatico
 app.use(express.static('./publico'));
+
+//teste
+app.use('/alunos', (requisicao, resposta)=>{
+    const aluno = new Aluno();
+    aluno.consultar('').then((listaAlunos)=>{
+        resposta.json(listaAlunos);
+    })
+})
+
 app.use('/login', rotaLogin);
 //autencicar para acessar protegido
 app.use(autenticar, express.static('./protegido'));
+
+
 
 
 app.listen(porta, host, () => {

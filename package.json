@@ -24,6 +24,7 @@
   "homepage": "https://github.com/brwilliam/formularioAluno#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "express-session": "^1.17.3"
+    "express-session": "^1.17.3",
+    "mysql2": "^3.6.2"
   }
 }
