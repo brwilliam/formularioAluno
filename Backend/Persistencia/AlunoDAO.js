@@ -39,22 +39,29 @@ export default class AlunoDAO{
         }
     }
 
-    async consultar(termo){
+    async consultar(termo) {
         const conexao = await conectar();
-        if(!termo) termo = "";
-
-        const listaAlunos=[];
+    
+        if (!termo) termo = "";
+    
+        const listaAlunos = [];
         const sql = 'SELECT * FROM aluno WHERE nome LIKE ?';
-        const parametros = ['%' + termo + '%'];
+        const parametros = [`%${termo}%`]; // consultando por partes
         const [rows] = await conexao.query(sql, parametros);
-        for(const linha of rows){
-            const aluno = new Aluno (linha.nome, linha.cpf, linha.dataNasc, linha.genero, 
-                                        linha.endereco, linha.bairro, linha.email, linha.celular, linha.estadoCivil);
-            listaAlunos.push(aluno);
-                                     
-        }
-
-        return listaAlunos
+    
+        listaAlunos = rows.map(linha => new Aluno(
+            linha.nome,
+            linha.cpf,
+            linha.dataNasc,
+            linha.genero,
+            linha.endereco,
+            linha.bairro,
+            linha.email,
+            linha.celular,
+            linha.estadoCivil
+        ));
+    
+        return listaAlunos;
     }
 }
 
