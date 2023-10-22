@@ -2,7 +2,7 @@ import express from "express";
 import autenticar from "./seguranca/Autenticacao.js";
 import session from "express-session";
 import rotaLogin from "./rotas/rotaLogin.js";
-import Aluno from './Backend/Modelo/Aluno.js';
+import rotaAluno from "./Backend/Rotas/rotaAluno.js";
 
 //ip 0.0.0.0 todas interfaces disponiveis
 const host = '0.0.0.0';
@@ -10,6 +10,8 @@ const host = '0.0.0.0';
 const porta='3206';
 
 const app = express();
+
+app.use(express.json()); // dizendo ao servidor como processar json
 
 app.use(express.urlencoded({ extended: false }));
 //origem da requisição.usuario
@@ -25,13 +27,8 @@ app.use(session({
 //publicar da pasta publico //conteudo estatico
 app.use(express.static('./publico'));
 
-//teste
-app.use('/alunos', (requisicao, resposta)=>{
-    const aluno = new Aluno();
-    aluno.consultar('').then((listaAlunos)=>{
-        resposta.json(listaAlunos);
-    })
-});
+//requisiçoes rota aluno
+app.use('/alunos', rotaAluno);
 
 app.use('/login', rotaLogin);
 //autencicar para acessar protegido

@@ -123,7 +123,7 @@ export default class Aluno{
         await aluDAO.atualizar(this);
     }
 
-    async exluir(){
+    async excluir(){
         const aluDAO = new AlunoDAO();
         await aluDAO.excluir(this);
     }

@@ -9,7 +9,7 @@ export default class AlunoDAO{
         if(aluno instanceof Aluno){
             const conexao = await conectar();
             const sql = 'INSERT INTO aluno (nome, cpf, dataNasc, genero, endereco,\
-                             bairro, email, celular, estadoCivil) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, )';
+                             bairro, email, celular, estadoCivil) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
             const parametros = [aluno.nome, aluno.cpf, aluno.dataNasc, aluno.genero, aluno.endereco,
                                 aluno.bairro, aluno.email, aluno.celular, aluno.estadoCivil]
             await conexao.execute(sql, parametros);
