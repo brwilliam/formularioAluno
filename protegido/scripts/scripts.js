@@ -1,7 +1,22 @@
+
 //quando a pagina for carregada
 window.onload = () => {
-    mostrarAlunos([]);
+    obterAlunos();
 }
+
+function obterAlunos(){
+    fetch('https://129.146.68.51/aluno6-ppiadsead/alunos',{method:'GET'}).then((resposta)=>{
+        if (resposta.status === 200){
+            return resposta.json();
+        }
+        else{
+            return [];
+        }
+    }).then((listaAlunos)=>{
+        mostrarAlunos(listaAlunos);
+    });
+}
+
 function mostrarAlunos(listaAlunos){
     let elementoDivTabela = document.getElementById('espacoTabela');
     if(listaAlunos.length > 0){
