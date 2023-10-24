@@ -31,13 +31,19 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Nome Completo</label>
-                                    <input class="input--style-4" type="text" name="nome" id="nome" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" required title="O nome não deve conter números ou caracteres especiais">
+                                    <input class="input--style-4" type="text" name="nome" id="nome" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" required>
+                                    <div class="invalid-feedback">
+                                        Digite o nome completo.
+                                    </div>                                
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">CPF</label>
-                                    <input class="input--style-4" type="text" name="cpf" id="cpf" pattern="\d{11}" required title="Digite um CPF válido com 11 dígitos numéricos (apenas números)">
+                                    <input class="input--style-4" type="text" name="cpf" id="cpf" pattern="\d{11}" required>
+                                    <div class="invalid-feedback">
+                                        Digite o CPF.
+                                    </div>   
                                 </div>
                             </div>
                         </div>
@@ -49,6 +55,7 @@
                                         <input class="input--style-4 js-datepicker" type="date" name="dataNasc" id="dataNasc"required>
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-2">
@@ -71,13 +78,19 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Endereço</label>
-                                    <input class="input--style-4" type="text" name="endereco" id="endereco" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" required title="O nome não deve conter números ou caracteres especiais">
+                                    <input class="input--style-4" type="text" name="endereco" id="endereco" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" required>
+                                    <div class="invalid-feedback">
+                                        Digite o endereço.
+                                    </div> 
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Bairro</label>
-                                    <input class="input--style-4" type="text" name="bairro" id="bairro"pattern="\d{11}" required title="Digite um CPF válido com 11 dígitos numéricos (apenas números)">
+                                    <input class="input--style-4" type="text" name="bairro" id="bairro"pattern="\d{11}" required>
+                                    <div class="invalid-feedback">
+                                        Digite o bairro.
+                                    </div> 
                                 </div>
                             </div>
                         </div>
@@ -86,12 +99,18 @@
                                 <div class="input-group">
                                     <label class="label">Email</label>
                                     <input class="input--style-4" type="email" name="email" id="email"required>
+                                    <div class="invalid-feedback">
+                                        Digite o bairro.
+                                    </div> 
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Celular</label>
-                                    <input class="input--style-4" type="text" name="celular" id="celular" pattern="\d{11}" required title="Digite um número de celular válido com 11 dígitos numéricos (apenas números)">
+                                    <input class="input--style-4" type="text" name="celular" id="celular" pattern="\d{11}" required>
+                                    <div class="invalid-feedback">
+                                        Digite o numero de celular.
+                                    </div> 
                                 </div>
                             </div>
                         </div>
@@ -105,7 +124,9 @@
                                     <option value="Solteiro(a)">Solteiro(a)</option>
                                     <option value="Viuvo(a)">Viuvo(a)</option>
                                 </select>
-                                <div class="select-dropdown"></div>
+                                <div class="invalid-feedback">
+                                    Selecione o estado civil.
+                                </div> 
                             </div>
                         </div>
                         <div class="col-12">

@@ -27,7 +27,7 @@ function limparFormulario(){
         document.getElementById('estadoCivil').value = 'Selecione uma opção';
 }
 
-botaoCadastrar.onclick =()=>{
+botaoCadastrar.onclick=()=>{
     if(formulario.checkValidity()){
         const aluno = obterAlunosFormulario();
         cadastrarAluno(aluno);
