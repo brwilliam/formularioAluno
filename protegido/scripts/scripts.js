@@ -4,6 +4,14 @@ window.onload = () => {
     obterAlunos();
 }
 
+function mostrarMensagem(mensagem,tipo){
+    let divMensagem = document.getElementById('mensagem');
+    divMensagem.innerHTML= `<div class="alert alert-${tipo}" role="alert">${mensagem}</div>`;
+    setTimeout(()=>{
+        divMensagem.innerHTML = '';     
+    }, 5000);
+}
+
 function obterAlunos(){
     fetch('https://129.146.68.51/aluno6-ppiadsead/alunos',{method:'GET'}).then((resposta)=>{
         if (resposta.status === 200){
@@ -14,7 +22,39 @@ function obterAlunos(){
         }
     }).then((listaAlunos)=>{
         mostrarAlunos(listaAlunos);
-    });
+    }).catch((erro)=>{
+        mostrarMensagem('Não foi possivel obter os alunos do backend. Erro: '+ erro.mensage,'danger');
+    })
+}
+
+function cadastrarAluno(aluno){
+    fetch('https://129.146.68.51/aluno6-ppiadsead/alunos',{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify(aluno)
+    }).then((resposta)=> {
+        if (resposta.status === 200){
+            return resposta.json();
+        }
+        else{
+            return {
+                status:false,
+                mensagem: 'Não foi possivel enviar o aluno para o banco de dados.'
+            };
+        }
+    }).then((respostaBackEnd)=>{
+        if (respostaBackEnd.status){
+            mostrarMensagem(respostaBackEnd.mensagem,'sucess');
+        }
+        else{
+            amostrarMensagem(respostaBackEnd.mensagem,'danger');
+        }
+
+    }).catch((erro)=>{
+        mostrarMensagem(erro.mensage,'danger');
+    })
 }
 
 function mostrarAlunos(listaAlunos) {
