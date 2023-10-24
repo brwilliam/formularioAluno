@@ -1,4 +1,41 @@
+const botaoCadastrar = document.getElementById('cadastrar');
+const formulario = document.getElementById('formAluno');
 
+function obterAlunosFormulario(){
+    return{
+        nome:document.getElementById('nome').value,
+        cpf:document.getElementById('cpf').value,
+        dataNasc:document.getElementById('dataNasc').value,
+        genero:document.getElementById('genero').value,
+        endereco:document.getElementById('endereco').value,
+        bairro:document.getElementById('bairro').value,
+        email:document.getElementById('email').value,
+        celular:document.getElementById('celular').value,
+        estadoCivil:document.getElementById('estadoCivil').value,
+    }
+}
+
+function limparFormulario(){
+        document.getElementById('nome').value = '';
+        document.getElementById('cpf').value = '';
+        document.getElementById('dataNasc').value = '';
+        document.getElementById('genero').value = '';
+        document.getElementById('endereco').value = '';
+        document.getElementById('bairro').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('celular').value = '';
+        document.getElementById('estadoCivil').value = 'Selecione uma opção';
+}
+
+botaoCadastrar.onclick =()=>{
+    if(formulario.checkValidity()){
+        const aluno = obterAlunosFormulario();
+        cadastrarAluno(aluno);
+        limparFormulario();
+    }
+    formulario.classList.add('was-validated');
+
+}
 //quando a pagina for carregada
 window.onload = () => {
     obterAlunos();
@@ -47,6 +84,7 @@ function cadastrarAluno(aluno){
     }).then((respostaBackEnd)=>{
         if (respostaBackEnd.status){
             mostrarMensagem(respostaBackEnd.mensagem,'sucess');
+            obterAlunos();
         }
         else{
             amostrarMensagem(respostaBackEnd.mensagem,'danger');
