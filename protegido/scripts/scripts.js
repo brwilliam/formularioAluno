@@ -25,7 +25,7 @@ function mostrarAlunos(listaAlunos) {
         elementoDivTabela.innerHTML = '';
 
         let tabela = document.createElement('table');
-        tabela.className = 'table table-dark ';
+        tabela.className = 'table table-dark';
         let cabecalhoTabela = document.createElement('thead');
         let corpoTabela = document.createElement('tbody');
 
