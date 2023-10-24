@@ -67,9 +67,7 @@ function obterAlunos(){
 function cadastrarAluno(aluno){
     fetch('https://129.146.68.51/aluno6-ppiadsead/alunos',{
         method:'POST',
-        headers:{
-            'Content-Type':'application/json'
-        },
+        headers:{'Content-Type':'application/json'},
         body:JSON.stringify(aluno)
     }).then((resposta)=> {
         if (resposta.status === 200){
@@ -87,7 +85,7 @@ function cadastrarAluno(aluno){
             obterAlunos();
         }
         else{
-            amostrarMensagem(respostaBackEnd.mensagem,'danger');
+            mostrarMensagem(respostaBackEnd.mensagem,'danger');
         }
 
     }).catch((erro)=>{
@@ -138,6 +136,6 @@ function mostrarAlunos(listaAlunos) {
         tabela.appendChild(corpoTabela);
         elementoDivTabela.appendChild(tabela);
     } else {
-        elementoDivTabela.innerHTML = '<div class="alert alert-warning" role="alert">Nenhum aluno cadastrado!</div>';
+        elementoDivTabela.innerHTML = `<div class="alert alert-warning" role="alert">Nenhum aluno cadastrado!</div>`;
     }
 }
