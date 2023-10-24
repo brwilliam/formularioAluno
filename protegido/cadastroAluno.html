@@ -42,7 +42,7 @@
                                     <label class="label">CPF</label>
                                     <input class="input--style-4" type="text" name="cpf" id="cpf" pattern="\d{11}" required>
                                     <div class="invalid-feedback">
-                                        Digite o CPF.
+                                        Digite o CPF com 11digitos.
                                     </div>   
                                 </div>
                             </div>
@@ -55,6 +55,9 @@
                                         <input class="input--style-4 js-datepicker" type="date" name="dataNasc" id="dataNasc"required>
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
+                                    <div class="invalid-feedback">
+                                        Digite a data de Nascimento.
+                                    </div> 
                                     
                                 </div>
                             </div>
@@ -70,6 +73,9 @@
                                             <input type="radio" name="genero" required>
                                             <span class="checkmark"></span>
                                         </label>
+                                        <div class="invalid-feedback">
+                                            Selecione o genero.
+                                        </div> 
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +93,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Bairro</label>
-                                    <input class="input--style-4" type="text" name="bairro" id="bairro"pattern="\d{11}" required>
+                                    <input class="input--style-4" type="text" name="bairro" id="bairro"pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" required>
                                     <div class="invalid-feedback">
                                         Digite o bairro.
                                     </div> 
@@ -100,7 +106,7 @@
                                     <label class="label">Email</label>
                                     <input class="input--style-4" type="email" name="email" id="email"required>
                                     <div class="invalid-feedback">
-                                        Digite o bairro.
+                                        Digite o email.
                                     </div> 
                                 </div>
                             </div>
@@ -109,7 +115,7 @@
                                     <label class="label">Celular</label>
                                     <input class="input--style-4" type="text" name="celular" id="celular" pattern="\d{11}" required>
                                     <div class="invalid-feedback">
-                                        Digite o numero de celular.
+                                        Digite o numero de celular com 11 digitos.
                                     </div> 
                                 </div>
                             </div>
