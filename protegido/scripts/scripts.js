@@ -11,7 +11,7 @@ function obterAlunosFormulario(){
         bairro:document.getElementById('bairro').value,
         email:document.getElementById('email').value,
         celular:document.getElementById('celular').value,
-        estadoCivil:document.getElementById('estadoCivil').value,
+        estadoCivil:document.getElementById('estadoCivil').value
     }
 }
 
@@ -24,7 +24,7 @@ function limparFormulario(){
         document.getElementById('bairro').value = '';
         document.getElementById('email').value = '';
         document.getElementById('celular').value = '';
-        document.getElementById('estadoCivil').value = 'Selecione uma opção';
+        document.getElementById('estadoCivil').value = 'Selecione uma opção'
 }
 
 botaoCadastrar.onclick=()=>{
@@ -91,7 +91,7 @@ function cadastrarAluno(aluno){
         }
 
     }).catch((erro)=>{
-        mostrarMensagem(erro.mensage,'danger');
+        mostrarMensagem(erro.message,'danger');
     })
 }
 
